@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Claude Code
+.claude/
+
+# Node
+node_modules/
+
+# WhatsApp media (source files, not part of the site)
+WhatsApp *.jpeg
+WhatsApp *.mp4
+
+# Duplicate logo at root
+/Logo.jpeg
+
+# Unused images
+assets/images/hero-bg.jpeg
+assets/images/p11.jpeg
+assets/images/p12.jpeg
