@@ -151,12 +151,54 @@
     var slideInterval = 5000;
     var slideTimer;
 
+    var heroTyped = document.getElementById('hero-typed');
+    var heroTexts = ['les lieux saints', 'La Mecque', 'Médine', 'en toute sérénité', 'avec Al Ihsan Travel'];
+    var typeTimer = null;
+
+    function typeText(text, el, cb) {
+      var i = 0;
+      el.textContent = '';
+      function tick() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          typeTimer = setTimeout(tick, 55);
+        } else if (cb) {
+          typeTimer = setTimeout(cb, 1800);
+        }
+      }
+      tick();
+    }
+
+    function eraseText(el, cb) {
+      var txt = el.textContent;
+      function tick() {
+        if (txt.length > 0) {
+          txt = txt.slice(0, -1);
+          el.textContent = txt;
+          typeTimer = setTimeout(tick, 30);
+        } else if (cb) {
+          cb();
+        }
+      }
+      tick();
+    }
+
+    function animateHeroText(index) {
+      if (!heroTyped) return;
+      var text = heroTexts[index % heroTexts.length];
+      eraseText(heroTyped, function () {
+        typeText(text, heroTyped);
+      });
+    }
+
     function goToSlide(n) {
       slides[currentSlide].classList.remove('active');
       if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
       currentSlide = n;
       slides[currentSlide].classList.add('active');
       if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+      animateHeroText(n);
     }
 
     function nextSlide() {
