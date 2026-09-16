@@ -469,6 +469,13 @@ a.contact__card-text:hover { text-decoration: underline; }
 .marquee__dot { width: 6px; height: 6px; border-radius: 50%; background-color: var(--ai-gold); flex-shrink: 0; }
 @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
+.video-section { padding-block: 64px; background-color: var(--ai-navy-dark); }
+.video-section__header { text-align: center; margin-bottom: 32px; }
+.video-section__header h2 { color: #fff; }
+.video-section__header .eyebrow--green { color: var(--ai-gold); }
+.video-section__wrapper { max-width: 480px; margin: 0 auto; border-radius: var(--ai-radius-lg); overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.3); }
+.video-section__wrapper video { display: block; width: 100%; height: auto; }
+
 .director { padding-block: 72px; background-color: var(--ai-cream); }
 .director__inner { display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: center; }
 .director__photo { position: relative; }
