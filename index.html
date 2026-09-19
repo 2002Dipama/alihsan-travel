@@ -16,7 +16,7 @@
   <link rel="icon" href="assets/brand/logo.jpeg" type="image/jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/styles.min.css?v=4">
+  <link rel="stylesheet" href="css/styles.min.css?v=5">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -466,26 +466,45 @@
     <div class="testimonials__header fade-up">
       <span class="eyebrow eyebrow--green">Témoignages</span>
       <h2>Ils nous ont fait confiance</h2>
-      <p>Découvrez les retours de nos pèlerins et voyageurs, en vidéo.</p>
+      <p>Cliquez sur une vidéo pour la regarder en grand avec le son.</p>
     </div>
     <div class="testimonials__grid">
-      <div class="testimonials__item fade-up">
-        <div class="testimonials__video">
-          <video controls playsinline preload="metadata" poster="assets/images/image1.jpeg">
-            <source src="assets/images/temoignage-1.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="testimonials__item fade-up" data-delay="100">
-        <div class="testimonials__video">
-          <video controls playsinline preload="metadata" poster="assets/images/Image2.jpeg">
-            <source src="assets/images/temoignage-2.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
+      <button class="testimonials__thumb fade-up" data-video="assets/images/temoignage-1.mp4" type="button">
+        <video muted playsinline preload="metadata" poster="assets/images/image1.jpeg"><source src="assets/images/temoignage-1.mp4" type="video/mp4"></video>
+        <span class="testimonials__play">&#9654;</span>
+      </button>
+      <button class="testimonials__thumb fade-up" data-video="assets/images/temoignage-2.mp4" type="button" data-delay="50">
+        <video muted playsinline preload="metadata" poster="assets/images/Image2.jpeg"><source src="assets/images/temoignage-2.mp4" type="video/mp4"></video>
+        <span class="testimonials__play">&#9654;</span>
+      </button>
+      <button class="testimonials__thumb fade-up" data-video="assets/images/temoignage-3.mp4" type="button" data-delay="100">
+        <video muted playsinline preload="metadata"><source src="assets/images/temoignage-3.mp4" type="video/mp4"></video>
+        <span class="testimonials__play">&#9654;</span>
+      </button>
+      <button class="testimonials__thumb fade-up" data-video="assets/images/temoignage-4.mp4" type="button" data-delay="150">
+        <video muted playsinline preload="metadata"><source src="assets/images/temoignage-4.mp4" type="video/mp4"></video>
+        <span class="testimonials__play">&#9654;</span>
+      </button>
+      <button class="testimonials__thumb fade-up" data-video="assets/images/temoignage-5.mp4" type="button" data-delay="200">
+        <video muted playsinline preload="metadata"><source src="assets/images/temoignage-5.mp4" type="video/mp4"></video>
+        <span class="testimonials__play">&#9654;</span>
+      </button>
+      <button class="testimonials__thumb fade-up" data-video="assets/images/temoignage-6.mp4" type="button" data-delay="250">
+        <video muted playsinline preload="metadata"><source src="assets/images/temoignage-6.mp4" type="video/mp4"></video>
+        <span class="testimonials__play">&#9654;</span>
+      </button>
     </div>
   </div>
 </section>
+
+<!-- ══ MODAL VIDÉO TÉMOIGNAGE ══ -->
+<div class="video-modal" id="videoModal" aria-hidden="true">
+  <div class="video-modal__backdrop"></div>
+  <div class="video-modal__content">
+    <button class="video-modal__close" aria-label="Fermer">&times;</button>
+    <video class="video-modal__player" controls playsinline></video>
+  </div>
+</div>
 
 <!-- ══ CTA ══ -->
 <section class="cta-banner">

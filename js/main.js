@@ -288,4 +288,41 @@
     };
     window.addEventListener('scroll', highlightNav, { passive: true });
   }
+  // ── Video testimonial modal ──
+  var videoModal = document.getElementById('videoModal');
+  if (videoModal) {
+    var modalPlayer = videoModal.querySelector('.video-modal__player');
+    var modalClose = videoModal.querySelector('.video-modal__close');
+    var modalBackdrop = videoModal.querySelector('.video-modal__backdrop');
+
+    var openModal = function (src) {
+      modalPlayer.src = src;
+      videoModal.classList.add('active');
+      videoModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      modalPlayer.play();
+    };
+
+    var closeModal = function () {
+      modalPlayer.pause();
+      modalPlayer.removeAttribute('src');
+      videoModal.classList.remove('active');
+      videoModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    document.querySelectorAll('.testimonials__thumb').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var src = btn.getAttribute('data-video');
+        if (src) openModal(src);
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && videoModal.classList.contains('active')) closeModal();
+    });
+  }
+
 })();
