@@ -5,7 +5,7 @@
 - **Activité** : Agence de voyage spécialisée Hajj, Omra et tourisme
 - **Villes** : Ouagadougou (Tampouy, cité Azimo) et Bobo-Dioulasso
 - **Téléphones** : +226 70 13 89 89 / 77 31 33 22 (Ouaga), 74 74 74 47 / 78 81 29 73 (Bobo)
-- **Email** : alihsantravel24@gmail.com
+- **Email** : contact@alihsantravelbf.com
 - **WhatsApp** : +226 70 13 89 89
 - **Domaine** : alihsantravelbf.com
 - **GitHub** : https://github.com/2002Dipama/alihsan-travel
