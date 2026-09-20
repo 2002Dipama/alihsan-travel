@@ -296,16 +296,19 @@
     var modalBackdrop = videoModal.querySelector('.video-modal__backdrop');
 
     var openModal = function (src) {
-      modalPlayer.src = src;
+      modalPlayer.innerHTML = '<source src="' + src + '" type="video/mp4">';
+      modalPlayer.load();
       videoModal.classList.add('active');
       videoModal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
-      modalPlayer.play();
+      var p = modalPlayer.play();
+      if (p && p.catch) p.catch(function () {});
     };
 
     var closeModal = function () {
       modalPlayer.pause();
-      modalPlayer.removeAttribute('src');
+      modalPlayer.innerHTML = '';
+      modalPlayer.load();
       videoModal.classList.remove('active');
       videoModal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
